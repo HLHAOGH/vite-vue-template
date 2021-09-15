@@ -49,5 +49,20 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    // chunk size limit
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/js/[name].[hash].js',
+        chunkFileNames: 'assets/js/[name].[hash].js',
+        assetFileNames: 'assets/css/[name].[hash].[ext]',
+        // chunk split
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString();
+          }
+        },
+      }
+    },
   },
 })
