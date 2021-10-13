@@ -18,7 +18,6 @@ export default defineConfig({
   // 引入依赖
   optimizeDeps: {
     include: [
-      'element-plus/lib/locale/lang/zh-cn',
       'axios'
     ]
   },

@@ -1,5 +1,5 @@
 <template>
-  <div>Hello {{ state.name }}</div>
+  <div>Hello</div>
 </template>
 
 <script>
